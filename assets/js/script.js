@@ -150,7 +150,6 @@ var completeEditTask = function (taskName, taskType, taskId) {
       tasks[i].type == taskType;
     }
   }
-  // parseInt()函数将其转换为一个数字
 
   alert("Task Updated!");
 
@@ -204,6 +203,7 @@ var taskStatusChangeHandler = function (event) {
       tasks[i].status = statusValue;
     }
   }
+
   // save tasks to localStorage
   saveTasks();
 };
@@ -260,8 +260,7 @@ var deleteTask = function (taskId) {
 };
 
 var saveTasks = function () {
-  localStorage.setItem("tasks", JSON.stringify(tasks));
-  // stringify() converted the tasks array into a string
+  localStorage.setItem("tasks", JSON.stringify(tasks));// stringify() converted the tasks array into a string
 };
 
 var loadTasks = function () {
@@ -291,3 +290,5 @@ pageContentEl.addEventListener("click", taskButtonHandler);
 
 // for changing the status
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
+
+loadTasks();
